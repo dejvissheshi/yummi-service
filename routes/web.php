@@ -17,8 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function (){
-    return [
-    "test"=>"test"
-    ];
-});
+//Route::get('/pizzas', 'OrderController@getPizzaQuery');
