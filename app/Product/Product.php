@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Product;
 
+use App\ProductPriceType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -15,13 +16,12 @@ class Product extends Model implements iProduct
     protected $fillable = [
         'product_name', 'product_type', 'price_euro', 'price_dollar', 'description', 'photo'
     ];
-
     /**
      * @param null $priceType
      * @param null $productType
      * @return array|Collection
      */
-    public function getWithTypeAndPriceFilters($priceType = null,$productType =null):array
+    public static function getWithTypeAndPriceFilters($priceType = null,$productType =null):array
     {
         if(!$priceType){
             $priceColumn = 'price_euro';

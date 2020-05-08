@@ -2,11 +2,12 @@
 
 
 namespace App\Http\Controllers\Api;
-use App\Http\Controllers\ProductsQuery;
+use App\Domain\ProductsQuery;
+use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
 
-class ProductController
+class ProductController extends Controller
 {
     public function getProducts(Request $request){
         $productType = $request->input('product_type');

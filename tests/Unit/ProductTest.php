@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Product;
+use App\Product\Product;
 use App\ProductPriceType;
 use App\ProductType;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -16,8 +16,7 @@ class ProductTest extends TestCase
     public function testGetWithTypeAndPriceFiltersNoPriceType()
     {
         factory(Product::class,3)->create();
-        $productClass = new Product();
-        $retrievedProducts = $productClass->getWithTypeAndPriceFilters();
+        $retrievedProducts = Product::getWithTypeAndPriceFilters();
         $this->assertCount(3, $retrievedProducts);
     }
 
@@ -29,8 +28,7 @@ class ProductTest extends TestCase
         factory(Product::class)->create([
                 'product_type' => 'drinks'
             ]);
-        $productClass = new Product();
-        $retrievedProducts = $productClass->getWithTypeAndPriceFilters(null, ProductType::PIZZA);
+        $retrievedProducts = Product::getWithTypeAndPriceFilters(null, ProductType::PIZZA);
         $this->assertCount(1, $retrievedProducts);
     }
 
@@ -41,8 +39,7 @@ class ProductTest extends TestCase
             'price_euro' => 4,
             'price_dollar' => 4.32,
         ]);
-        $productClass = new Product();
-        $retrievedProducts = $productClass->getWithTypeAndPriceFilters(ProductPriceType::EURO, ProductType::PIZZA);
+        $retrievedProducts = Product::getWithTypeAndPriceFilters(ProductPriceType::EURO, ProductType::PIZZA);
         $this->assertEquals(4, $retrievedProducts[0]->price_euro);
     }
 }

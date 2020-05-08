@@ -26,4 +26,4 @@ Route::get('/Product', function () {
 
 Route::get('/products', 'Api\ProductController@getProducts');
 
-//Route::get('/pizzas', 'OrderController@getPizzaQuery');
+//Route::get('/pizzas', 'OrderCommander@getPizzaQuery');
