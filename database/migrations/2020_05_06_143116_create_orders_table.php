@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->json('product_ids');
+            $table->json('products');
             $table->enum('status',['ordered', 'delivered']);
             $table->timestamp('delivery_time');
             $table->timestamps();

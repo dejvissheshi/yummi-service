@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
-       'product_ids' => json_encode([
+       'products' => json_encode([
        [
            'quantity' => $faker->randomDigitNotNull,
            'product_id' => $faker->randomDigitNotNull,

@@ -17,13 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Product', function () {
-    phpinfo();
-    return [
-        'Product'=>'Product'
-    ];
-});
-
+Route::post('/create-order','Api\OrderController@createOrder');
 Route::get('/products', 'Api\ProductController@getProducts');
-
-//Route::get('/pizzas', 'OrderCommander@getPizzaQuery');
+Route::get('/order/{id}', 'Api\OrderController@getSingleOrder');
