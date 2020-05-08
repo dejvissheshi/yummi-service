@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://remotemysql.com:3306</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@remotemysql.com [2]" uuid="77b97f8d-343e-4eeb-87f8-fd16794e01d8">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://remotemysql.com:3306</jdbc-url>
+    </data-source>
   </component>
 </project>

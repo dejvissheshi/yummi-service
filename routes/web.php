@@ -17,4 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    phpinfo();
+    return [
+        'test'=>'test'
+    ];
+});
+
+Route::get('/products', 'Api\ProductController@getProducts');
+
 //Route::get('/pizzas', 'OrderController@getPizzaQuery');
