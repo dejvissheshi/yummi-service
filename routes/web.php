@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
+Route::get('/Product', function () {
     phpinfo();
     return [
-        'test'=>'test'
+        'Product'=>'Product'
     ];
 });
 

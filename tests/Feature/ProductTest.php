@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ProductTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * A basic feature Product example.
      *
      * @return void
      */
