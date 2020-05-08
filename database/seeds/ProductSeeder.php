@@ -15,30 +15,66 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-            [
-                'product_name' => 'Pizza 1',
-                'product_type' => 'pizza',
-                'price_euro' => 4,
-                'price_dollar' => 4.32,
-                'description' => Str::random(10),
-                'photo' => Str::random(10)
-            ],
-            [
-                'product_name' => 'Pizza 2',
-                'product_type' => 'pizza',
-                'price_euro' => 4,
-                'price_dollar' => 4.32,
-                'description' => Str::random(10),
-                'photo' => Str::random(10)
-            ],
-            [
-                'product_name' => 'Drink 1',
-                'product_type' => 'drink',
-                'price_euro' => 2,
-                'price_dollar' => 2.16,
-                'description' => Str::random(10),
-                'photo' => Str::random(10)
-            ]
+                [
+                    'product_name' => 'Capricciosa',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Chicken & Mushroom',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Diavola',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Italian',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Margarita',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Mexican',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Mushroom & Saalam',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Peperoni',
+                    'product_type' => 'pizza',
+                    'price_euro' => 4,
+                    'price_dollar' => 4.32
+                ],
+                [
+                    'product_name' => 'Coca Cola',
+                    'product_type' => 'drinks',
+                    'price_euro' => 2,
+                    'price_dollar' => 2.16
+                ],
+                [
+                    'product_name' => 'Water',
+                    'product_type' => 'drinks',
+                    'price_euro' => 1.5,
+                    'price_dollar' => 1.62
+                ]
         ]);
     }
 }
