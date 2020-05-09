@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Common;
 
 use Carbon\Carbon;
@@ -15,8 +14,9 @@ class Validator implements iValidator
     {
         $key = env('SECRET_KEY');
         $payload = array(
-            'iat' => Carbon::now(),
-            'exp' => Carbon::tomorrow()
+            'iat' => time(),
+            'nbf' => time(),
+            'exp' => time() + (7 * 24 * 60 * 60)
         );
 
         return JWT::encode($payload, $key);
@@ -28,10 +28,9 @@ class Validator implements iValidator
             $key = env('SECRET_KEY');
             $decoded = JWT::decode($token, $key, array('HS256'));
             $decodedArray = (array)$decoded;
-            if ($decodedArray['exp'] < Carbon::now()){
+            if ($decodedArray['exp'] < time()){
                 throw new Exception('Token expired!');
             }
-
         }catch (Exception $e){
             throw new Exception('Token invalid!');
         }

@@ -19,7 +19,7 @@ class AuthenticateUser
      */
     public static function handle($request, Closure $next)
     {
-        if (!$request->header('Authenticator')){
+        if (!$request->header('x-auth-token')){
             return response(
                 [
                     'success' => false,
@@ -27,14 +27,14 @@ class AuthenticateUser
                 ],400);
         }
 
-        $token = $request->header('Authenticator');
         try {
-
+            $token = $request->header('x-auth-token');
             Validator::validateJwt($token);
             VerifyToken::isTokenValid($token);
 
             return $next($request);
         }catch (Exception $e){
+            logger($e);
             return response(
                 [
                     'success' => false,
