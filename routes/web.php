@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::post('/register', 'Api\AuthController@register');
+Route::post('/login', 'Api\AuthController@login');
 Route::post('/create-order','Api\OrderController@createOrder');
 Route::get('/products', 'Api\ProductController@getProducts');
 Route::get('/order/{id}', 'Api\OrderController@getSingleOrder');
