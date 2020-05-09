@@ -28,8 +28,6 @@ class OrderController extends Controller
             ],200);
 
         }catch (Exception $e){
-            logger("Error: ".$e->getMessage());
-            logger("Line: ".$e->getLine());
             return response([
                 'success' => false
             ],404);

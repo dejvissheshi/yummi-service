@@ -23,7 +23,6 @@ class ProductController extends Controller
                 ]
             ];
         }catch (Exception $e){
-            logger("Error ".$e->getMessage());
             return[
                 'success' => false
             ];
