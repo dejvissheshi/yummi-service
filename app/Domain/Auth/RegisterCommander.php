@@ -3,13 +3,13 @@
 
 namespace App\Domain\Auth;
 
+use App\LoginHistory\LoginHistory;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
 use App\Client\Client;
 use App\Common\Validator;
-use App\LoginHistory;
 
 class RegisterCommander
 {
@@ -50,7 +50,7 @@ class RegisterCommander
 
     public static function createLoginHistory(int $clientId, string $token, string $email){
         $loginHistory = new LoginHistory();
-        $loginHistory->clientId = $clientId;
+        $loginHistory->client_id = $clientId;
         $loginHistory->token = $token;
         $loginHistory->email = $email;
         $loginHistory->created_at = Carbon::now();

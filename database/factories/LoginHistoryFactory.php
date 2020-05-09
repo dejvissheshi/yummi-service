@@ -2,10 +2,10 @@
 
 /** @var Factory $factory */
 
-use App\LoginHistory;
-use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
+use Carbon\Carbon;
+use App\LoginHistory\LoginHistory;
 
 $factory->define(LoginHistory::class, function (Faker $faker) {
     return [
