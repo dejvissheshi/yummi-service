@@ -27,8 +27,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::middleware(['web', 'authenticate.user'])->group(function () {
         Route::get('/personal-info', 'Api\ClientController@getClientInfo');
-        Route::get('/orders', 'Api\OrderController@getOrders');
-
+        Route::get('/orders/{token}', 'Api\OrderController@getClientOrders');
     });
 });
 

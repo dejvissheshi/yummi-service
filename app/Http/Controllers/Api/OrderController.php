@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Domain\GetClientOrdersQuery;
 use App\Domain\OrderCommander;
 use App\Domain\SingleOrderQuery;
 use Exception;
@@ -47,6 +48,21 @@ class OrderController extends Controller
             return[
                 'success' => false
             ];
+        }
+    }
+
+    public function getClientOrders(Request $request, string $token){
+        $priceType = $request->input('price_type');
+        try{
+            $orders = GetClientOrdersQuery::getAuthenticatedClientOrders($token, $priceType);
+            return response([
+                'success'=> true,
+                'data'=> $orders
+            ],200);
+        }catch (Exception $e){
+            return response([
+                'success'=>false
+            ],404);
         }
     }
 }

@@ -3,7 +3,6 @@
 
 namespace App\Order;
 
-
 use App\OrderStatus;
 use Illuminate\Database\Eloquent\Model;
 

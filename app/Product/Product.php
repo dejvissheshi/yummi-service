@@ -16,11 +16,7 @@ class Product extends Model implements iProduct
     protected $fillable = [
         'product_name', 'product_type', 'price_euro', 'price_dollar', 'description', 'photo'
     ];
-    /**
-     * @param null $priceType
-     * @param null $productType
-     * @return array|Collection
-     */
+
     public static function getWithTypeAndPriceFilters($priceType = null,$productType =null):array
     {
         if(!$priceType){
