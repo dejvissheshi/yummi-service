@@ -32,4 +32,6 @@ class LoginHistory extends Model
         'client_id', 'token', 'email', 'created_at', 'updated_at'
     ];
 
+    protected $dates = ['deleted_at'];
+
 }
