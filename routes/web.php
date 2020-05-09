@@ -21,4 +21,5 @@ Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
 Route::post('/create-order','Api\OrderController@createOrder');
 Route::get('/products', 'Api\ProductController@getProducts');
+Route::get('/orders', 'Api\OrderController@getOrders')->middleware('authenticate.user');
 Route::get('/order/{id}', 'Api\OrderController@getSingleOrder');
