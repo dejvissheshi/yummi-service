@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'http://localhost:8000/*',
+        'https://yummi-ui.herokuapp.com/*'
         //'http://localhost:8000/register'
     ];
 }
