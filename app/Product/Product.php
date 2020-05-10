@@ -27,11 +27,11 @@ class Product extends Model implements iProduct
 
         $data = !$productType ?
             DB::table('products')
-                ->select(['product_name', 'product_type', $priceColumn, 'description', 'photo'])->get()->all()
+                ->select(['id','product_name', 'product_type', $priceColumn, 'description', 'photo'])->get()->all()
             :
             DB::table('products')
                 ->where('product_type', $productType)
-                ->select(['product_name', 'product_type', $priceColumn, 'description', 'photo'])->get()->all();
+                ->select(['id','product_name', 'product_type', $priceColumn, 'description', 'photo'])->get()->all();
 
         return !$data ? [] : $data;
     }
