@@ -23,6 +23,7 @@ class ProductController extends Controller
                 ]
             ];
         }catch (Exception $e){
+            logger('ERROR'. $e->getTraceAsString());
             return[
                 'success' => false
             ];
