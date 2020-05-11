@@ -80,7 +80,7 @@ class GetClientOrdersQuery
         }
     }
 
-    private static function getOrderProducts(array $orderIds): array
+    public static function getOrderProducts(array $orderIds): array
     {
         $data = Product::whereIn('id', $orderIds)->get();
         $orderProducts = json_decode($data);
